@@ -28,6 +28,6 @@
 <ul>
   @foreach(var worker in ViewBag.Workers)
   {
-    <li>@Html.ActionLink($"{worker.Name}", "Details", new { id = worker.WorkerId })</li>
+    <li>@worker.Name</li>
   }
 </ul>
