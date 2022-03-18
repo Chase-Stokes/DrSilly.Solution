@@ -32,7 +32,7 @@ _An epicodus project using a many to many relationship, to help the user keep tr
 
 _**In order to access a usable version of the sql database you will need to do the following:**_
 
-* _Create a file named appsettings.json in the SalonClient directory_
+* _Create a file named appsettings.json in the Factory directory_
 * _The file should contain this block of code except with your own username and password for the server(brackets around private information not included):_
 ```
 {
