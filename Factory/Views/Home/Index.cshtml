@@ -7,13 +7,13 @@
 
 @if (@ViewBag.Machines.Count == 0)
 {
-  <h3>No machinery has been added yet...</h3>
+  <p>No machinery has been added yet...</p>
 } 
 
 <ul>
   @foreach(var machine in ViewBag.Machines)
   {
-    <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
+    <li>@machine.Name</li>
   }
 </ul>
 
@@ -22,7 +22,7 @@
 
 @if (@ViewBag.Workers.Count == 0)
 {
-  <h3>No employees have been added yet...</h3>
+  <p>No employees have been added yet...</p>
 } 
 
 <ul>
