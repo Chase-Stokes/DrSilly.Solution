@@ -2,32 +2,36 @@
   Layout = "_Layout";
 }
 
+<div class="row">
+  <div class="col-md-6">
+    <h4>Machinery: </h4>
 
-<h4>Machinery: </h4>
+    @if (@ViewBag.Machines.Count == 0)
+    {
+      <p>No machinery has been added yet...</p>
+    } 
 
-@if (@ViewBag.Machines.Count == 0)
-{
-  <p>No machinery has been added yet...</p>
-} 
+    <ul>
+      @foreach(var machine in ViewBag.Machines)
+      {
+        <li>@machine.Name</li>
+      }
+    </ul>
+  </div>
 
-<ul>
-  @foreach(var machine in ViewBag.Machines)
-  {
-    <li>@machine.Name</li>
-  }
-</ul>
+  <div class="col-md-6">
+    <h4>Employees: </h4>
 
+    @if (@ViewBag.Workers.Count == 0)
+    {
+      <p>No employees have been added yet...</p>
+    } 
 
-<h4>Employees: </h4>
-
-@if (@ViewBag.Workers.Count == 0)
-{
-  <p>No employees have been added yet...</p>
-} 
-
-<ul>
-  @foreach(var worker in ViewBag.Workers)
-  {
-    <li>@worker.Name</li>
-  }
-</ul>
+    <ul>
+      @foreach(var worker in ViewBag.Workers)
+      {
+        <li>@worker.Name</li>
+      }
+    </ul>
+  </div>
+</div>

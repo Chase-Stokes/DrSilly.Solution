@@ -4,24 +4,29 @@
 
 @model Factory.Models.Machine;
 
-<h2>Machinery Details</h2>
+<h2 class="center">Machinery Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<div class="row">
+  <div class="col-md-12">
+    <h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This machine has no workers that can run it...</p>
-}
-else
-{
-  <h4>The current employees that can use this machine are:</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Worker.Name</li>
-  }
-  </ul>
-}
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>This machine has no workers that can run it...</p>
+    }
+    else
+    {
+      <h4>The current employees that can use this machine are:</h4>
+      <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Worker.Name</li>
+      }
+      </ul>
+    }
+  
+  </div>
+</div>
 
-<p>@Html.ActionLink("Edit Machine Info", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Remove Machine", "Delete", new { id = Model.MachineId })</p>
+<p class="center">@Html.ActionLink("Edit Machine Info", "Edit", new { id = Model.MachineId })</p>
+<p class="center">@Html.ActionLink("Remove Machine", "Delete", new { id = Model.MachineId })</p>

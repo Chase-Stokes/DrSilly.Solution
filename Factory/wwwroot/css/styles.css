@@ -1,0 +1,38 @@
+body {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/001/218/845/original/colorful-holographic-gradient-background-design-vector.jpg);
+  margin: 5em;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+  text-align: center;
+  background-color: rgba(253, 191, 200, 0.3);
+  padding: 2em;
+  margin-bottom: 5em;
+}
+
+.footer {
+  position:fixed;
+	bottom:0px;
+	left:0px;
+	width:100%;
+  text-align: center;
+  background-color: rgba(253, 191, 200, 0.3);
+  padding: 1em;
+}
+
+.col-md-6{
+  padding-left: 15%;
+}
+
+.center {
+  text-align: center;
+  margin-top: 3em;
+}
+
+.col-md-12 {
+  margin-left: 33%;
+  margin-right: 33%;
+}
+

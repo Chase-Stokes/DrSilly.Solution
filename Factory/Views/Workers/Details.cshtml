@@ -3,38 +3,44 @@
 }
 
 @model Factory.Models.Worker
-
-<h4>Worker Details:</h4>
+<h4 class="center">Worker Details:</h4>
 <hr />
-<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+<div class="row">
+  <div class="col-md-6">
+    <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>This worker is not certified for any of the machines yet</p>
-}
-else
-{
-  <p>Machines the worker is certified for:</p>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Machine.Name</li>
-  }
-  </ul>
-}
-
-<p>@Html.ActionLink("Add Machine Employee Can Use", "AddMachine", new { id = Model.WorkerId })</p>
-
-<ul>
-  @foreach(var join in Model.JoinEntities)
-  {
-    <li>@join.Machine.Name</li>
-    @using (Html.BeginForm("DeleteMachine", "Workers"))
+    @if(@Model.JoinEntities.Count == 0)
     {
-      @Html.Hidden("joinId", @join.WorkerMachineId)
-      <input type="submit" value="Delete"/>
+      <p>This worker is not certified for any of the machines yet</p>
     }
-  }
-</ul>
+    else
+    {
+      <p>Machines the worker is certified for:</p>
+      <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Machine.Name</li>
+      }
+      </ul>
+    }
+  </div>
 
-<p>@Html.ActionLink("Edit Worker Info", "Edit", new { id = Model.WorkerId })</p>
+  <div class="col-md-6">
+
+    <ul>
+      @foreach(var join in Model.JoinEntities)
+      {
+        <li>@join.Machine.Name</li>
+        @using (Html.BeginForm("DeleteMachine", "Workers"))
+        {
+          @Html.Hidden("joinId", @join.WorkerMachineId)
+          <input type="submit" value="Delete"/>
+        }
+      }
+    </ul>
+  </div>
+</div>
+
+
+<p class="center">@Html.ActionLink("Add Machine Employee Can Use", "AddMachine", new { id = Model.WorkerId })</p>
+<p class ="center">@Html.ActionLink("Edit Worker Info", "Edit", new { id = Model.WorkerId })</p>
