@@ -22,7 +22,7 @@ namespace Factory.Controllers
         {
       var workers =_db.Workers.ToList();
       var machines =_db.Machines.ToList();
-      ViewBag.Engineers = workers;
+      ViewBag.Workers = workers;
       ViewBag.Machines = machines;
       return View();
     }
